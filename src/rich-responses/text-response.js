@@ -182,10 +182,7 @@ class Text extends RichResponse {
       // {"text": {"text": ["text response"]},"platform": "FACEBOOK"}
       response = {text: {text: []}};
       response.text.text = [this.text];
-      // response is the same for generic responses without the platform attribute
-      if (SUPPORTED_RICH_MESSAGE_PLATFORMS.indexOf(platform) > -1) {
-        response.platform = platform;
-      }
+      response.platform = this.platform
     }
     return response;
   }
